@@ -1,6 +1,81 @@
 {
-  "name": "loopback-component-passport",
+  "_args": [
+    [
+      {
+        "raw": "loopback-component-passport@git+https://github.com/hdeshmukh/loopback-component-passport.git",
+        "scope": null,
+        "escapedName": "loopback-component-passport",
+        "name": "loopback-component-passport",
+        "rawSpec": "git+https://github.com/hdeshmukh/loopback-component-passport.git",
+        "spec": "git+https://github.com/hdeshmukh/loopback-component-passport.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:hdeshmukh/loopback-component-passport.git",
+          "sshUrl": "git+ssh://git@github.com/hdeshmukh/loopback-component-passport.git",
+          "httpsUrl": "git+https://github.com/hdeshmukh/loopback-component-passport.git",
+          "gitUrl": "git://github.com/hdeshmukh/loopback-component-passport.git",
+          "shortcut": "github:hdeshmukh/loopback-component-passport",
+          "directUrl": "https://raw.githubusercontent.com/hdeshmukh/loopback-component-passport/master/package.json"
+        }
+      },
+      "/Users/hdeshmukh/Documents/code/photerloo-loopback-mobile"
+    ]
+  ],
+  "_from": "git+https://github.com/hdeshmukh/loopback-component-passport.git#bcc5256a0f4a70f17d0ced404931bef495fac57a",
+  "_id": "loopback-component-passport@2.3.0",
+  "_inCache": true,
+  "_location": "/loopback-component-passport",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "loopback-component-passport@git+https://github.com/hdeshmukh/loopback-component-passport.git",
+    "scope": null,
+    "escapedName": "loopback-component-passport",
+    "name": "loopback-component-passport",
+    "rawSpec": "git+https://github.com/hdeshmukh/loopback-component-passport.git",
+    "spec": "git+https://github.com/hdeshmukh/loopback-component-passport.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:hdeshmukh/loopback-component-passport.git",
+      "sshUrl": "git+ssh://git@github.com/hdeshmukh/loopback-component-passport.git",
+      "httpsUrl": "git+https://github.com/hdeshmukh/loopback-component-passport.git",
+      "gitUrl": "git://github.com/hdeshmukh/loopback-component-passport.git",
+      "shortcut": "github:hdeshmukh/loopback-component-passport",
+      "directUrl": "https://raw.githubusercontent.com/hdeshmukh/loopback-component-passport/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/hdeshmukh/loopback-component-passport.git#bcc5256a0f4a70f17d0ced404931bef495fac57a",
+  "_shasum": "58ab607f084523b0518c838ec3cbcfb92b3e3558",
+  "_shrinkwrap": null,
+  "_spec": "loopback-component-passport@git+https://github.com/hdeshmukh/loopback-component-passport.git",
+  "_where": "/Users/hdeshmukh/Documents/code/photerloo-loopback-mobile",
+  "bugs": {
+    "url": "https://github.com/strongloop/loopback-component-passport/issues"
+  },
+  "dependencies": {
+    "passport": "^0.4.0",
+    "strong-globalize": "^2.6.2",
+    "underscore": "^1.8.3"
+  },
   "description": "LoopBack passport integration to support third party logins and account linking",
+  "devDependencies": {
+    "eslint": "^2.13.1",
+    "eslint-config-loopback": "^4.0.0",
+    "loopback": "^2.39.0",
+    "mocha": "^3.0.1",
+    "mock-require": "^1.3.0",
+    "sinon": "^1.17.5",
+    "supertest": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "gitHead": "bcc5256a0f4a70f17d0ced404931bef495fac57a",
+  "homepage": "https://github.com/strongloop/loopback-component-passport",
   "keywords": [
     "StrongLoop",
     "LoopBack",
@@ -8,43 +83,26 @@
     "login",
     "security"
   ],
-  "homepage": "https://github.com/strongloop/loopback-component-passport",
-  "version": "2.2.0",
-  "engines": {
-    "node": ">=0.10.0"
-  },
+  "license": "Artistic-2.0",
+  "main": "./lib/index.js",
   "maintainers": [
     {
       "name": "Raymond Feng",
       "email": "raymond@strongloop.com"
     }
   ],
-  "bugs": {
-    "url": "https://github.com/strongloop/loopback-component-passport/issues"
-  },
+  "name": "loopback-component-passport",
+  "optionalDependencies": {},
+  "readme": "# loopback-component-passport\n\n**NOTE: This module supersedes [loopback-passport](https://www.npmjs.org/package/loopback-passport). Please update your package.json accordingly.**\n\nThe module provides integration between [LoopBack](http://loopback.io) and\n[Passport](http://passportjs.org) to support third-party login and account\nlinking for LoopBack applications.\n\n<img src=\"./ids_and_credentials.png\" width=\"600px\" />\n\n> Please see the [official documentation](http://docs.strongloop.com/pages/viewpage.action?pageId=3836277) for more information.\n\n## All local accounts requires verification\n\n### All third party accounts will login with an email of `uniqueID@loopback.provider.com` example `123456@loopback.facebook.com`\n\nwhich will allow the user to link the social media accounts that they want as well as the users could sign up with the same email account that is used for facebook/twitter/google/local if they wish to keep them separate.\n\nFacebook profile information (such as email, gender, timezone, etc) may still be included if necessary. See\nhttps://github.com/strongloop/loopback-example-passport/blob/master/README.md#4-facebook-profile-info.\n\nAll user required info including the email will be available, but the main email for the account will remain `uniqueID@loopback.facebook.com`.\n",
+  "readmeFilename": "README.md",
   "repository": {
     "type": "git",
     "url": "git://github.com/strongloop/loopback-component-passport.git"
   },
-  "dependencies": {
-    "passport": "^0.3.2",
-    "strong-globalize": "^2.6.2",
-    "underscore": "^1.8.3"
-  },
-  "devDependencies": {
-    "eslint": "^2.5.3",
-    "eslint-config-loopback": "^4.0.0",
-    "loopback": "^2.29.1",
-    "mocha": "^3.0.1",
-    "mock-require": "^1.3.0",
-    "sinon": "^1.17.5",
-    "supertest": "^2.0.0"
-  },
   "scripts": {
     "lint": "eslint .",
-    "test": "./node_modules/.bin/mocha -R spec --timeout 10000 test/*.js",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint",
+    "test": "mocha -R spec --timeout 10000 test/*.js"
   },
-  "main": "./lib/index.js",
-  "license": "Artistic-2.0"
+  "version": "2.3.0"
 }
